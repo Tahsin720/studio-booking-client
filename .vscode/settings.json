@@ -1,0 +1,30 @@
+{
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.formatOnSave": true,
+  "svg.preview.background": "custom",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "files.autoSave": "onFocusChange",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.importSorter": "explicit",
+    "typescript.sortImports": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "cSpell.words": ["dropdownbase", "navigations", "syncfusion"]
+}

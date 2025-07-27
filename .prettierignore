@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+
+
+
+# Ignore specific files:
+src/assets/**/*.json

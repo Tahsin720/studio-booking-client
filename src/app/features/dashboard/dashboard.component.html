@@ -1,0 +1,105 @@
+<!-- src/app/components/studio-list/studio-list.component.html -->
+<div class="container mx-auto p-4">
+    <div class="flex flex-wrap justify-end gap-2 mb-6">
+        <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Search by area..."
+            class="w-full md:w-1/3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button
+            (click)="applyFilter()"
+            class="bg-gray-500 text-white p-2 rounded-lg hover:bg-gray-600 transition duration-300">
+            Search
+        </button>
+    </div>
+    <div class="flex flex-wrap justify-end gap-2 mb-6">
+        <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Search by Radius"
+            class="w-full md:w-1/3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button
+            (click)="applyFilter()"
+            class="bg-gray-500 text-white p-2 rounded-lg hover:bg-gray-600 transition duration-300">
+            Search
+        </button>
+    </div>
+
+    <div class="flex flex-wrap justify-center">
+        <table
+            mat-table
+            [dataSource]="dataSource"
+            class="mat-elevation-z8 w-full max-w-4xl bg-gradient-to-r from-gray-500 to-gray-750">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >ID</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2">{{
+                    element.id
+                }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >Name</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2">{{
+                    element.name
+                }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >Type</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2">{{
+                    element.type
+                }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >Location</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2">{{
+                    element.location
+                }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="pricePerHour">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >Price per Hour</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2"
+                    >${{ element.pricePerHour }}</td
+                >
+            </ng-container>
+
+            <ng-container matColumnDef="rating">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >Rating</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2">{{
+                    element.rating
+                }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef class="bg-gray-100 border px-4 py-2 text-left"
+                    >Actions</th
+                >
+                <td mat-cell *matCellDef="let element" class="border px-4 py-2">
+                    <button
+                        mat-button
+                        (click)="openBookingModal(element.id)"
+                        class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 transition duration-300">
+                        Book Now
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+</div>
