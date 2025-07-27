@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { User } from '@core/models/user';
 import { catchError, of, Subject, takeUntil, tap } from 'rxjs';
 import { StudioService } from './../../core/services/studio.service';
 import { BrowserModule } from '@angular/platform-browser';
